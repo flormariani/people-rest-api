@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -23,9 +24,11 @@ public class Persona {
     private String nombre;
 
     @NotNull
+    @JsonProperty("tipo_doc")
     private String tipoDoc;
 
     @NotNull
+    @JsonProperty("nro_doc")
     private int nroDoc;
 
     @NotNull
@@ -37,10 +40,12 @@ public class Persona {
     @NotNull
     private String contacto;
 
+    @JsonProperty("id_padre")
     private Long idPadre;
 
     @NotNull
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
+    @JsonProperty("fecha_nacimiento")
     private LocalDate fechaNacimiento;
 
     public Persona() {

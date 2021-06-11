@@ -1,12 +1,19 @@
 package com.fmariani.examples.crudPerson.dtos;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Created by florencia on 10/06/21.
  */
 public class EstadisticasDto {
 
+    @JsonProperty("cantidad_mujeres")
     private long cantMujeres;
+
+    @JsonProperty("cantidad_hombres")
     private long cantHombres;
+
+    @JsonProperty("cantidad_argentinos")
     private long porcArgentinos;
 
     public EstadisticasDto() {

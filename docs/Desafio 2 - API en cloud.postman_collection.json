@@ -25,10 +25,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://deafio-supervielle-crud-person.herokuapp.com/estadisticas",
+					"raw": "https://api-rest-personas.herokuapp.com/estadisticas",
 					"protocol": "https",
 					"host": [
-						"deafio-supervielle-crud-person",
+						"api-rest-personas",
 						"herokuapp",
 						"com"
 					],
@@ -59,10 +59,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://deafio-supervielle-crud-person.herokuapp.com/personas",
+					"raw": "https://api-rest-personas.herokuapp.com/personas",
 					"protocol": "https",
 					"host": [
-						"deafio-supervielle-crud-person",
+						"api-rest-personas",
 						"herokuapp",
 						"com"
 					],
@@ -93,10 +93,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://deafio-supervielle-crud-person.herokuapp.com/personas/1002",
+					"raw": "https://api-rest-personas.herokuapp.com/personas/1002",
 					"protocol": "https",
 					"host": [
-						"deafio-supervielle-crud-person",
+						"api-rest-personas",
 						"herokuapp",
 						"com"
 					],
@@ -137,10 +137,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://deafio-supervielle-crud-person.herokuapp.com/personas",
+					"raw": "https://api-rest-personas.herokuapp.com/personas",
 					"protocol": "https",
 					"host": [
-						"deafio-supervielle-crud-person",
+						"api-rest-personas",
 						"herokuapp",
 						"com"
 					],
@@ -192,10 +192,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://deafio-supervielle-crud-person.herokuapp.com/personas/1002",
+					"raw": "https://api-rest-personas.herokuapp.com/personas/1002",
 					"protocol": "https",
 					"host": [
-						"deafio-supervielle-crud-person",
+						"api-rest-personas",
 						"herokuapp",
 						"com"
 					],
@@ -239,10 +239,10 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://deafio-supervielle-crud-person.herokuapp.com/personas/1001",
+					"raw": "https://api-rest-personas.herokuapp.com/personas/1001",
 					"protocol": "https",
 					"host": [
-						"deafio-supervielle-crud-person",
+						"api-rest-personas",
 						"herokuapp",
 						"com"
 					],
