@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "9fd12043-e2e5-4beb-8326-b9dcbb217bef",
+		"name": "Desafio 2 - API en cloud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Statistics",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://deafio-supervielle-crud-person.herokuapp.com/estadisticas",
+					"protocol": "https",
+					"host": [
+						"deafio-supervielle-crud-person",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"estadisticas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All people",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://deafio-supervielle-crud-person.herokuapp.com/personas",
+					"protocol": "https",
+					"host": [
+						"deafio-supervielle-crud-person",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"personas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search person by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://deafio-supervielle-crud-person.herokuapp.com/personas/1002",
+					"protocol": "https",
+					"host": [
+						"deafio-supervielle-crud-person",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"personas",
+						"1002"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create person",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nombre\": \"Pedro\",\n  \"contacto\": \"03541379904\",\n  \"nroDoc\": 225555338,\n  \"pais\": \"Argentina\",\n  \"sexo\": \"M\",\n  \"tipoDoc\": \"DNI\",\n  \"fechaNacimiento\": \"29/03/2001\",\n  \"idPadre\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://deafio-supervielle-crud-person.herokuapp.com/personas",
+					"protocol": "https",
+					"host": [
+						"deafio-supervielle-crud-person",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"personas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update person",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "ff5a7fe7-bd26-4ef1-a072-a34031ad2c8a",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Sofia\",\n    \"tipoDoc\": \"DNI\",\n    \"nroDoc\": 29333333,\n    \"pais\": \"Argentina\",\n    \"sexo\": \"F\",\n    \"contacto\": \"+541122222222\",\n    \"idPadre\": null,\n    \"fechaNacimiento\": \"15/01/2015\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://deafio-supervielle-crud-person.herokuapp.com/personas/1002",
+					"protocol": "https",
+					"host": [
+						"deafio-supervielle-crud-person",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"personas",
+						"1002"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete person by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "d7358512-c509-4c0e-bf9d-6ebf2ee66ff1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://deafio-supervielle-crud-person.herokuapp.com/personas/1001",
+					"protocol": "https",
+					"host": [
+						"deafio-supervielle-crud-person",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"personas",
+						"1001"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
