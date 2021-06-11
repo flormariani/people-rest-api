@@ -6,7 +6,7 @@ A sample CRUD using Spring Rest API to manage people
 1. Clone this repository
 
 ```
-git clone https://github.com/flormariani/rest-people-api.git
+git clone https://github.com/flormariani/people-rest-api.git
 ```
 
 2. Compile the sources and run the application

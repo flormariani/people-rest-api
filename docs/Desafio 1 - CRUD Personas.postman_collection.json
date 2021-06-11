@@ -93,7 +93,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"nombre\": \"Pedro\",\n  \"contacto\": \"03541379904\",\n  \"nroDoc\": 225555338,\n  \"pais\": \"Argentina\",\n  \"sexo\": \"M\",\n  \"tipoDoc\": \"DNI\",\n  \"fechaNacimiento\": \"29/03/2001\",\n  \"idPadre\": null\n}",
+					"raw": "{\n  \"nombre\": \"Pedro\",\n  \"contacto\": \"03541379904\",\n  \"nro_doc\": 225555338,\n  \"pais\": \"Argentina\",\n  \"sexo\": \"M\",\n  \"tipo_doc\": \"DNI\",\n  \"fecha_nacimiento\": \"29/03/2001\",\n  \"id_padre\": null\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -147,7 +147,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"nombre\": \"Sofia\",\n    \"tipoDoc\": \"DNI\",\n    \"nroDoc\": 29333333,\n    \"pais\": \"Argentina\",\n    \"sexo\": \"F\",\n    \"contacto\": \"+541122222222\",\n    \"idPadre\": null,\n    \"fechaNacimiento\": \"15/01/2015\"\n}",
+					"raw": "{\n    \"nombre\": \"Sofia\",\n    \"tipo_doc\": \"DNI\",\n    \"nro_doc\": 29333333,\n    \"pais\": \"Argentina\",\n    \"sexo\": \"F\",\n    \"contacto\": \"+541122222222\",\n    \"id_padre\": null,\n    \"fecha_nacimiento\": \"15/01/2001\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
