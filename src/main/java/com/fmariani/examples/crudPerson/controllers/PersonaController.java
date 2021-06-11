@@ -7,9 +7,11 @@ import com.fmariani.examples.crudPerson.service.PersonaRepository;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import org.hibernate.exception.ConstraintViolationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -54,9 +56,7 @@ public class PersonaController {
     @PostMapping(value = {"", "/"})
     public ResponseEntity<?> create(@Valid @RequestBody PersonaDto personaDto) {
         log.debug( "Accediendo a create() con Persona = {}", personaDto.toString() );
-        if (loadPerson( personaDto.getTipoDoc(), personaDto.getNroDoc(), personaDto.getPais(), personaDto.getSexo() ).isPresent()) {
-            return ResponseEntity.status( HttpStatus.CONFLICT ).build();
-        }
+
         //Valido que el padre existe
         if (personaDto.getIdPadre() != null && !personaRepository.findById( personaDto.getIdPadre() ).isPresent()) {
             return ResponseEntity.badRequest().body( new ResponseDto( HttpStatus.BAD_REQUEST.getReasonPhrase(), "El idPadre no se encuentra en la DB" ) );
@@ -76,7 +76,13 @@ public class PersonaController {
         persona.setIdPadre( personaDto.getIdPadre() );
         persona.setNombre( personaDto.getNombre() );
 
-        personaRepository.save( persona );
+        try {
+            personaRepository.save( persona );
+        }
+        catch(DataIntegrityViolationException ex){
+            log.error( "No pudo guardarse la entidad: ", ex );
+            return ResponseEntity.status( HttpStatus.CONFLICT ).build();
+        }
         return ResponseEntity.ok().body( persona );
     }
 
@@ -103,12 +109,6 @@ public class PersonaController {
             return ResponseEntity.badRequest().body( new ResponseDto( HttpStatus.BAD_REQUEST.getReasonPhrase(), "Debe ser mayor de 18" ) );
         }
 
-        // Verifico que no existan dos personas con el mismo tipoDoc, nroDoc, sexo y pais
-        Optional<Persona> pDuplicated = this.loadPerson( personDetails.getTipoDoc(), personDetails.getNroDoc(), personDetails.getPais(), personDetails.getSexo() );
-        if (pDuplicated.isPresent() && pDuplicated.get().getId() != personId) {
-            return ResponseEntity.status( HttpStatus.CONFLICT ).build();
-        }
-
         person.get().setId( personId );
         person.get().setTipoDoc( personDetails.getTipoDoc() );
         person.get().setNroDoc( personDetails.getNroDoc() );
@@ -118,7 +118,14 @@ public class PersonaController {
         person.get().setIdPadre( personDetails.getIdPadre() );
         person.get().setNombre( personDetails.getNombre() );
 
-        Persona updatedPersona = personaRepository.save( person.get() );
+        Persona updatedPersona;
+        try {
+            updatedPersona = personaRepository.save( person.get() );
+        }
+        catch(DataIntegrityViolationException ex){
+            log.error( "No pudo guardarse la entidad: ", ex );
+            return ResponseEntity.status( HttpStatus.CONFLICT ).build();
+        }
         return ResponseEntity.ok( updatedPersona );
     }
 
