@@ -16,6 +16,7 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "PERSONA", indexes = {
         @Index(name = "idx_pais", columnList = "pais"),
+        @Index(name = "idx_sexo", columnList = "sexo"),
         @Index(name = "unique_idx", columnList = "tipoDoc, nroDoc, pais, sexo", unique = true)
 })
 public class Persona {
