@@ -14,7 +14,10 @@ import java.time.LocalDate;
  * Created by florencia on 08/06/21.
  */
 @Entity
-@Table(name = "PERSONA")
+@Table(name = "PERSONA", indexes = {
+        @Index(name = "idx_pais", columnList = "pais"),
+        @Index(name = "unique_idx", columnList = "tipoDoc, nroDoc, pais, sexo", unique = true)
+})
 public class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
