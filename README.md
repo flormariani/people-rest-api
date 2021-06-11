@@ -12,7 +12,7 @@ git clone https://github.com/flormariani/people-rest-api.git
 2. Compile the sources and run the application
 
 ```
-cd rest-people-api
+cd people-rest-api
 mvn clean spring-boot:run
 ```
 
